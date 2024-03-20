@@ -18,6 +18,8 @@ public class LoginServlet {
   @GetMapping("/LoginServlet")
   public String doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
+    String id = request.getParameter("id");
+    System.out.println("id = " + id);
 
     return "/login.html";
   }
