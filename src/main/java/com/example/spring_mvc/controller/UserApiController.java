@@ -22,9 +22,10 @@ public class UserApiController {
     userService.save(request);
     return "redirect:/login";
   }
- 
+
   @GetMapping("/logout")
   public String logout(HttpServletRequest request, HttpServletResponse response) {
+    // 세션 삭제
     new SecurityContextLogoutHandler().logout(request, response,
         SecurityContextHolder.getContext().getAuthentication());
     return "redirect:/login";
